@@ -1,0 +1,370 @@
+/**********************
+*** Variables
+***********************/
+$small: 10px;
+$medium: 30px;
+$large: 50px;
+
+$purple-dark: #151343;
+$purple-light: #5B589C;
+$blue: #3B74CA;
+$orange: #F39673;
+$green: #419479;
+$grey-light: #e5e5e5;
+$grey-medium: #cccccc;
+$grey-dark: #777777;
+
+/***********************
+*** Global styles
+***********************/
+body {
+    color: $grey-dark;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 135%;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 300;
+}
+
+h2, h3 {
+    font-size: 34px;
+    margin-top: 0;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+    transition: color .3s linear;
+
+    &:hover {
+        color: darken($blue, 10%);
+    }
+}
+
+button {
+    background: $blue;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 7px 20px;
+    text-transform: uppercase;
+    transition: background .3s linear;
+
+    &:hover {
+        background: darken($blue, 10%);
+    }
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 5px;
+    border: 1px solid $grey-light;
+    box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.12);
+
+    .card-inner {
+        padding: 60px;
+
+        h3 {
+            margin-top: 0;
+        }
+    }
+}
+
+/***********************
+*** Utility styles
+***********************/
+.centered {
+    text-align: center;
+}
+
+.lifted-m {
+    margin-top: -$medium;
+}
+
+.lifted-l {
+    margin-top: -$large;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.bkg-1 {
+    background: url('../images/bkg-1.jpg') no-repeat;
+    background-size: cover;
+}
+
+.bkg-2 {
+    background: url('../images/bkg-2.jpg') no-repeat;
+    background-size: cover;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/***********************
+*** Main styles
+***********************/
+nav {
+    color: #ffffff;
+    font-size: 14px;
+    padding-right: 55px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 85px;
+    width: 100%;
+
+    &.fixed {
+        position: fixed;
+    }
+
+    .logo {
+        height: 80px;
+        width: auto;
+    }
+
+    a {
+        color: #ffffff;
+        margin-left: 40px;
+        text-decoration: none;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        &:hover {
+            color: darken(#ffffff, 20%);
+        }
+    }
+
+    button {
+        background: transparent;
+        border: 1px solid #ffffff;
+        margin-left: 40px;
+    }
+}
+
+header {
+    background: linear-gradient(to top right, rgba(16, 25, 66, 1), rgba(16, 25, 66, 0.8)), url('../images/bkg-1.jpg') no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    padding: 200px 0 60px;
+    text-align: center;
+
+    button {
+        margin-top: 35px;
+    }
+}
+
+.foundations {
+    padding-bottom: 100px;
+
+    .introduction{
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    h3 {
+        color: $purple-dark;
+    }
+
+    .grid-wrap {
+        margin-bottom: 70px;
+    }
+
+    .purple .icon {
+        color: $purple-light;
+    }
+
+    .icon {
+        font-size: 80px;
+    }
+
+    .item {
+        display: inline-block;
+        margin-right: 20px;
+        padding-right: 40px;
+        position: relative;
+        text-align: center;
+
+        .ion-android-bulb {
+            color: $blue;
+        }
+
+        .ion-document-text {
+            color: $orange;
+        }
+
+        .ion-ios-briefcase-outline {
+            color: $green;
+        }
+
+        &.plus:after {
+            content: '+';
+            display: block;
+            font-size: 36px;
+            color: #ccc;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            line-height: 36px;
+            margin-top: -18px;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    .head {
+        display: inline-block;
+        margin-right: 20px;
+        text-align: center;
+
+        .icon {
+            font-size: 110px;
+        }
+    }
+}
+
+.expectations {
+    position: relative;
+
+    .card {
+        position: relative;
+        top: -75px;
+    }
+
+    h3 {
+        color: $purple-dark;
+    }
+
+    .sidebar {
+        border: 1px solid $grey-medium;
+        border-left: none;
+        border-radius: 3px;
+        margin: 25px 0;
+        padding: 0 20px;
+        position: relative;
+
+        &:before {
+            background: rebeccapurple;
+            border-radius: 3px 0 0 3px;
+            bottom: -1px;
+            content: '';
+            left: 0;
+            position: absolute;
+            top: -1px;
+            width: 7px;
+        }
+
+        &.color-1:before {
+            background: $blue;
+        }
+
+        &.color-2:before {
+            background: $orange;
+        }
+
+        &.color-3:before {
+            background: $green;
+        }
+
+        h4 {
+            margin-top: 10px;
+        }
+    }
+
+    .reviews {
+        background: #f9f9f9;
+        height: 650px;
+        overflow-y: auto;
+        padding: 20px;
+
+        .review {
+            padding-left: 80px;
+            position: relative;
+
+            img {
+                border-radius: 25px;
+                height: auto;
+                left: 0;
+                position: absolute;
+                top: 5px;
+                width: 50px;
+            }
+
+            p {
+                background: #ffffff;
+                border: 1px solid $grey-light;
+                border-radius: 3px;
+                box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.12);
+                padding: 10px;
+                position: relative;
+
+                &:before {
+                    border-top: 12px solid transparent;
+                    border-bottom: 3px solid transparent;
+                    border-right: 10px solid #ffffff;
+                    content: '';
+                    display: block;
+                    left: -10px;
+                    position: absolute;
+                    top: 20px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+.edge {
+    background: linear-gradient(to bottom, rgba(16, 25, 66, 0.7), rgba(16, 25, 66, 0.7)), url('../images/bkg-4.png') no-repeat;
+    color: #ffffff;
+    line-height: 150%;
+    padding: 135px 0 75px;
+    text-align: center;
+}
+
+.tired {
+    padding: 85px 0;
+
+    button {
+        margin-top: 30px;
+    }
+}
+
+footer {
+    padding: 15px 0 50px 0;
+
+    .footer-link {
+        display: inline-block;
+        font-size: 13px;
+        text-align: center;
+
+        .icon {
+            font-size: 28px;
+            padding-right: 10px;
+            vertical-align: middle;
+        }
+    }
+}
